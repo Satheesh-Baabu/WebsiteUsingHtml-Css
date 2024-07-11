@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furn Mart</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="./images/3-1.png" type="image/x-icon">
+    
+</head>
+
+<body>
+    <section id="home">
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <a href="#aboutus">About</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="header">
+            <h1 class="glow">SB Furnitures</h1><br>
+            <p>Every piece of furniture tells a story</p>
+        </div>
+    </section>
+    <section id="aboutus">
+        <div class="aboutus">
+            <div class="about-heading">
+                <h1>About Us</h1>
+            </div><br>
+            <div class="about-img">
+                <div class="about-in"><img src="./images/2.png" alt="No image"></div>
+                <div class="about-ib">
+                    <p>
+                        At SB Furniture, we blend craftsmanship, innovation, and sustainability to offer exquisite
+                        furniture solutions that elevate living experiences. Our commitment to quality ensures each
+                        piece reflects unparalleled design and construction, while our diverse range caters to every
+                        taste. With a customer-centric approach, we provide personalized service and prioritize
+                        environmental responsibility in all our operations. Beyond furniture, we engage in community
+                        initiatives, embodying our dedication to social welfare. Experience the difference with SB
+                        Furniture, where luxury meets lifestyle.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem iste autem reprehenderit, amet,
+                        tempore esse neque sapiente, aliquam quas assumenda labore. Dignissimos magni culpa neque amet
+                        maxime mollitia beatae sed!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products">
+        <div class="products">
+            <div class="product-heading">
+                <h1>Our Products</h1>
+            </div>
+            <br><br>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img class="image" src="./images/image1.jpg" alt="Image 1">
+                    <h3>Bed</h3>
+                    <p>Rs.52,000</p><br>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+                <div class="grid-item">
+                    <img class="image" src="./images/image2.jpg" alt="Image 2">
+                    <h3>Sofa</h3>
+                    <p>Rs.68,000</p><br>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+                <div class="grid-item">
+                    <img class="image" src="./images/image3.jpg" alt="Image 2">
+                    <h3>Bench</h3>
+                    <p>Rs.18,000</p><br>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+                <div class="grid-item">
+                    <img class="image" src="./images/image4.jpg" alt="Image 2">
+                    <h3>Chair</h3>
+                    <p>Rs.15,000</p><br>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="contact">
+        <div class="footer">
+            <div class="footer-heading"><h1>Contact</h1></div>
+            <br><br><br><br>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12457.997354688854!2d77.01780491921875!3d11.169230335367978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8fbe3f72e8a07%3A0xc31725a3293815d3!2sFurn%20N%20Shine!5e0!3m2!1sen!2sin!4v1711208236747!5m2!1sen!2sin"     style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="form">
+            <div class="form-box">
+                <form method="post" action="submit.php">
+                    <u>
+                        <h2 style="text-align:center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                            Feedback</h2>
+                    </u>
+                    <label class="label">Name</label>
+                    <br>
+                    <input type="text" placeholder="Name" id='name' name="name1" onkeyup="validateName()" required>
+                    <br>
+                    <label id='error' class="success error"></label>
+                    <br>
+                    <label class="label">Mobile Number</label>
+                    <br>
+                    <input type="text" placeholder="Mobile Number" required id='mobile' name="mobile"
+                        onkeyup="validateMobile()">
+                    <br>
+                    <label class="error" id="mobile_error"></label>
+                    <br>
+                    <label class="label">Email</label>
+                    <br>
+                    <input type="email" placeholder="Email" required id="email" name="email" onkeyup="validateEmail()">
+                    <br>
+                    <label class="error" id="email_error"></label>
+                    <br><br>
+                    <textarea rows="4" cols="50" name="feed" placeholder="Any queries type here.."
+                        required></textarea><br>
+                    <input type="submit" value="Send" id="submit" style="background-color: #060708; color:white;"
+                        onclick="summit()">
+
+                </form>
+            </div>
+            </div>
+            
+            <div class="copyright">
+            <p style="text-align: center;padding: 20px;">Copyright &copy; 2024 Satheesh Baabu <br>All rights reserved.
+            </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Java Script -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://kit.fontawesome.com/db9c79123b.js" crossorigin="anonymous"></script>
+    <script>
+        var mobileInput = document.getElementById('mobile');
+        var nameInput = document.getElementById('name');
+        var emailInput = document.getElementById('email');
+        var flag1 = false;
+        var flag2 = false;
+        var flag3 = false;
+        function validateName() {
+
+            var namePattern = /^[a-zA-Z ]{3,}$/;
+            if (nameInput.value == "") {
+                document.getElementById('error').innerText = "Name Required";
+                // document.getElementById('error').classList.add("error");
+                document.getElementById('error').classList.remove("success");
+                flag1 = false;
+            }
+            else if (!namePattern.test(nameInput.value)) {
+                document.getElementById('error').innerText = 'Name must only contain only characters more than 2';
+                //    document.getElementById('error').classList.add("error");
+                document.getElementById('error').classList.remove("success");
+                flag1 = false;
+            }
+            else {
+                flag1 = true;
+                document.getElementById('error').innerText = 'Correct';
+                document.getElementById('error').classList.add("success");
+
+                //    document.getElementById('error').classList.remove("error");
+            }
+        }
+        function validateMobile() {
+
+            var mobilePattern = /^[0-9]{10}$/;
+
+            if (!mobilePattern.test(mobileInput.value)) {
+                document.getElementById('mobile_error').innerText = 'Mobile number must be 10 numeric digits.';
+                flag2 = false;
+            } else {
+                flag2 = true;
+                document.getElementById('mobile_error').innerText = '';
+            }
+        }
+        function validateEmail() {
+
+            var emailPattern = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]+(,[\w.-]+@[a-zA-Z]+\.[a-zA-Z]+)*$/;
+
+            if (!emailPattern.test(emailInput.value)) {
+                document.getElementById('email_error').innerText = 'Invalid email format.';
+                flag3 = false;
+            } else {
+                flag3 = true;
+                document.getElementById('email_error').innerText = '';
+            }
+        }
+        function summit() {
+            validateName();
+            validateEmail();
+            validateMobile();
+            if (flag1 == true && flag2 == true && flag3 == true) {
+
+
+                alert('Sent successfully')
+            }
+
+
+            // console.log('Message received Successfully');
+            // console.log('message sent successful');
+        }
+
+    </script>
+</body>
+
+</html>
